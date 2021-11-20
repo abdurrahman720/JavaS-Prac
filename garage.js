@@ -8,6 +8,7 @@ class Garage{
         this.vehicles.push(vehicle); 
         console.log("Vehicle added", vehicle);
         console.log("It will be released afetr", vehicle.repairTime,"day")
+        console.log("total repair cost will be",vehicle.repaircost,"taka")
         var isExisting= this.customers[vehicle.owner]; //after adding vehicle, we should put the currentDue as Zero if the vehicle is new in our garage
         if (!isExisting){
             this.customers[vehicle.owner] = 0;
@@ -20,7 +21,7 @@ class Garage{
         var totalDue= currentDue+vehicle.repaircost;
         this.customers[vehicle.owner]=totalDue;
         console.log("released", vehicle);
-        console.log("due from owner", totalDue);
+        console.log("due from owner", totalDue,"taka");
 
     }
 }
