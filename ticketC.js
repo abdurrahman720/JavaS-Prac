@@ -14,17 +14,6 @@ class ticketCounter{
         console.log("Alloted bus successfuly.",bus)
         console.log("Seats registered",bus.seat)
     }
-
-    /*/getPrices(name){
-        var isAvailable= this.isItemAvailable(name);
-        if (isAvailable==true){
-            var itemPrice= this.prices[name];
-            return itemPrice;
-        }
-        else{
-            console.log("Sorry, We do not have this item");
-        }
-    }/*/
     
     isBusAvailable(name){
          var busIndex=this.buses.indexOf(name);
