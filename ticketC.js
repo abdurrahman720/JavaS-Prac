@@ -1,41 +1,31 @@
 class ticketCounter{
     constructor(){
         this.buses=[];
-        this.names={};
+        this.busName=[];
         this.fares={};
         this.seats={};
 
     }
     addBus(bus){
         this.buses.push(bus.name);
-        this.names[bus.name]=bus.name;
+        this.busName.push(bus);
         this.fares[bus.name]=bus.fare;
         this.seats[bus.name]=bus.seat;
         console.log("Alloted bus successfuly.",bus)
         console.log("Seats registered",bus.seat)
     }
     
-    isBusAvailable(name){
-         var busIndex=this.buses.indexOf(name);
-         if(busIndex==-1){
-             return false;
-         } 
-         else{
-             return true;
-         }
-    }
-
     getDetails(name){
-        var isAvailable=this.isBusAvailable(name);
-        console.log(isAvailable);
+        var isAvailable=this.buses.indexOf(name);
        
-        if (isAvailable==false){
+        if (isAvailable==-1){
             console.log("We do not provide this bus service");
         }
         else{
-            var Busfare=this.fares[name]
+            var Busfare=this.fares[name];
+            var BusSeats=this.seats[name];
             console.log("The fare of this bus is",Busfare,"taka")
-            //console.log("total seats of this bus is",seat)
+            console.log("total seats of this bus is",BusSeats)
         }
     }
     bookTicket(name,seatNo){
@@ -60,6 +50,6 @@ var FultalaT= new ticketCounter();
 
 FultalaT.addBus(Bus1);
 FultalaT.addBus(Bus2);
-FultalaT.isBusAvailable("Shohag")
+
 FultalaT.getDetails("Shohag")
 FultalaT.bookTicket("Hanif",5)
