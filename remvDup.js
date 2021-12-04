@@ -17,13 +17,14 @@ console.log(remvDup(numbers));
 
 //this time,we're working with string and that's why no blank array should be declared and we'll use + operator instead of push
 function remvLett(sen){
-    var crcter="";
+    var crcter=[];
     for(var i=0;i<sen.length;i++){
         var tempL=sen[i];
         if(crcter.indexOf(tempL)==-1){
-            crcter=crcter+tempL;
+           crcter=crcter+tempL;
         }
     }
+    
     return crcter;
 }
 var love="I love yooouu"
